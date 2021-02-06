@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "home_and_logout"%>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @student.identifier %>
+</p>
+
+<p>
+  <strong>Sections:</strong>
+</p>
+
+<ul>
+  <% @student.sections.each do |section| %>
+    <li><b>ID</b>: <%= section.id %></li>
+
+
+<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

@@ -1,0 +1,20 @@
+Note Dockerfile differences:
+
+1. I copy the project into the image.
+2. I also included a bundle install so that this happens upon building the image
+3. The CMD runs when the image is run, removing input from user to spin up application
+
+Steps to run:
+
+1. clone project from repo
+2. goto repo root directory, then run:
+    docker build . -t image-name:version
+        # This copies the project into the image and installs the correct gem bundle
+3. then run:
+    docker run -it -p 3000:3000 image-name
+        # This will automatically run the server from binding 0.0.0.0 making app
+        # accessible from localhost:3000
+4. TO QUIT: ctrl+c in interactive terminal to stop both application and container
+
+If this process makes your life more difficult, let me know.
+I will make my program runnable from the given Dockerfile with a few inputs from the user.

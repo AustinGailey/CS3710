@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "home_and_logout"%>
+
+<p>
+  <strong>Courses in:</strong> <%= @department.name %>
+
+  <ol><%@department.courses.each do |course| %><li><%= course.number %><%end%></ol>
+
+</p>
+
+
+<%= link_to 'Edit', edit_department_path(@department) %> |
+<%= link_to 'Back', departments_path %>
